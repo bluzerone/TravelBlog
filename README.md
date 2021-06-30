@@ -1,27 +1,26 @@
+![Image alt](https://github.com/bluzerone/TravelBlog/raw/master/src/assets/screenshots/screenshot_travel_blog.jpeg)
 # TravelBlog
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.14.
+- Link to the deployed project:
+> https://travelblog-alexkim.web.app
+- This project was built with Angular v. 11.2.14.
+> https://angular.io
+- Using fireBase to store user data.
+> https://firebase.google.com
+- Slider is implemented with:
+> https://swiperjs.com
+- Angular Material UI styles were used
+> https://material.angular.io
 
-## Development server
+## User registration
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- In this project, registration is implemented through:
+> https://github.com/AnthonyNahas/ngx-auth-firebaseui
 
-## Code scaffolding
+## Time spent on the project
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- ~20 Hours
 
-## Build
+## My LinkedIn Link:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- https://www.linkedin.com/in/aleksander-akimov/
