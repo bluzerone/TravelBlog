@@ -22,6 +22,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     LoginComponent,
     HeaderComponent,
     FooterComponent,
-    SidenavComponent
+    SidenavComponent,
+    NotFoundComponent
 
   ],
   imports: [

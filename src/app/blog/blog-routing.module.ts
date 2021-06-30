@@ -5,6 +5,7 @@ import {PostComponent} from "./post/post.component";
 import {CreatePostComponent} from "./create-post/create-post.component";
 import {EditPostComponent} from "./edit-post/edit-post.component";
 import {MyPostsComponent} from "./my-posts/my-posts.component";
+import {NotFoundComponent} from "../not-found/not-found.component";
 
 let routes: Routes;
 
@@ -18,6 +19,7 @@ routes = [
     data: {animationState: 'Three'}},
   {path: 'my-posts/:id', component: MyPostsComponent,
     data: {animationState: 'Four'}},
+  { path: '**', component: NotFoundComponent },
 ];
 
 
