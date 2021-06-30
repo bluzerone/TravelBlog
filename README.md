@@ -7,6 +7,8 @@
 > https://angular.io
 - Using fireBase to store user data.
 > https://firebase.google.com
+- To display the current weather, the service was used:
+> https://openweathermap.org/
 - Slider is implemented with:
 > https://swiperjs.com
 - Angular Material UI styles were used
