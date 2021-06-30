@@ -1,2 +1,7 @@
-<p>login works!</p>
-<ngx-auth-firebaseui-login></ngx-auth-firebaseui-login>
+<div class="login_container">
+  <div class="login-title">Log in to your account or <span routerLink='/register'>register</span></div>
+  <ngx-auth-firebaseui-login
+    [registrationEnabled] = false
+    (onSuccess)='onSignin($event)'></ngx-auth-firebaseui-login>
+</div>
+

@@ -1,0 +1,49 @@
+<div class="create_post_container">
+  <div class="create_post_title">To edit a post fill out the form</div>
+  <form [formGroup]="editPostForm" (ngSubmit)="submitForm()">
+
+    <mat-form-field>
+      <mat-label>Enter the country of travel</mat-label>
+      <input matInput  formControlName="country">
+    </mat-form-field>
+    <div class="error_msg"
+         *ngIf="editPostForm.get('country').invalid && editPostForm.get('country').touched ">Please fill in this field, it is required</div>
+    <mat-form-field>
+      <mat-label>Enter the city of travel</mat-label>
+      <input matInput  formControlName="city">
+    </mat-form-field>
+    <div class="error_msg"
+         *ngIf="editPostForm.get('city').invalid && editPostForm.get('city').touched ">Please fill in this field, it is required</div>
+    <mat-form-field>
+      <mat-label>Enter the date of travel</mat-label>
+      <input type="date" matInput  formControlName="date">
+    </mat-form-field>
+    <div class="error_msg"
+         *ngIf="editPostForm.get('date').invalid && editPostForm.get('date').touched ">Please fill in this field, it is required</div>
+    <mat-form-field>
+      <mat-label>Enter the url of cover photo</mat-label>
+      <input matInput  formControlName="coverPhoto">
+    </mat-form-field>
+
+    <div class="photo_array" formArrayName="photo">
+      <div class="photo_array_title">Provide links to photos of your travel:</div>
+      <div class="photo_input" *ngFor="let control of getPhotoControls(); let i = index">
+        <mat-form-field >
+          <mat-label>Photo {{i + 1}}</mat-label>
+          <input matInput  [formControlName]="i">
+        </mat-form-field>
+        <button class="remove_input_btn" mat-raised-button color="warn" (click)="deletePhotoControl(i)">Remove input</button>
+      </div>
+      <div class="error_msg"
+           *ngIf="editPostForm.get('photo').invalid && editPostForm.get('photo').touched ">Please fill in this fields, it is required. Or remove inputs</div>
+      <button mat-raised-button color="primary" (click)="addPhotoControl()">Add photo input</button>
+    </div>
+    <mat-form-field  class="description_input" appearance="outline">
+      <mat-label>Enter description</mat-label>
+      <textarea matInput placeholder="Name"  formControlName="description"></textarea>
+    </mat-form-field>
+    <div class="error_msg"
+         *ngIf="editPostForm.get('date').invalid && editPostForm.get('date').touched ">Please fill in this field, it is required</div>
+    <button class="submit_form_btn" type="submit" mat-raised-button color="warn">Submit form</button>
+  </form>
+</div>

@@ -1,1 +1,18 @@
-<p>home works!</p>
+<div class="home_main">
+  <div class="home_bg"></div>
+  <div class="user_greeting">
+    <p class="user_greeting-text">Welcome to Travel Blog <span *ngIf="($loginSubject | async)">{{authService.userData?.displayName}}</span> </p>
+    <p class="about">On this site, you can see other users' travel stories, as well as share your stories and photos!</p>
+    <div class="about_block" *ngIf="($loginSubject | async); else unauth_about_block">
+      <p class="about">See your profile on <span routerLink='/user'>profile page</span></p>
+      <p class="about">To view publications, follow the link - <span routerLink='/bloglist'>"Blog List"</span></p>
+      <p class="about">In order to create a publication, you need to go here - <span routerLink='/create'>"Create"</span></p>
+      <p class="about"> You can view your publications by following the link - <span [routerLink]="['/my-posts/' + authService?.userData.uid]">"My Posts"</span></p>
+    </div>
+    <p class="about">All registered and authorized users can add new posts, edit and delete them!</p>
+    <ng-template #unauth_about_block>
+      <p class="about">To use these opportunities, you must <span routerLink='/register'>register</span>  or <span routerLink='/login'>log in!</span></p>
+    </ng-template>
+  </div>
+</div>
+

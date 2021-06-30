@@ -1,0 +1,12 @@
+<div class="sidenav__container">
+  <button mat-fab color="warn"
+          *ngFor="let link of mainService.sidenavLinks"
+          [ngClass]="{'active': link.active}"
+          (click)="mainService.setActiveClass(link.id)"
+          [disabled] = '!authService.loginState && link.name != "home"'
+          routerLink="{{link.link}}"
+  >
+    <mat-icon [attr.disabled] = 'authService.userData'
+              class="icon">{{link.name}}</mat-icon>
+  </button>
+</div>

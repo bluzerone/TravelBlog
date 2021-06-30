@@ -1,0 +1,368 @@
+.post_wrapper{
+  padding: 15px 20px;
+  height: 100%;
+  overflow: auto;
+}
+.card_bg{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.1;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+mat-card{
+  background: none;
+  height: 90%;
+  position: relative;
+}
+mat-card-header{
+  border-bottom: 1px solid #000000;
+  margin-bottom: 15px;
+}
+mat-card-actions{
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+.photo_block{
+  display: flex;
+  flex-wrap: wrap;
+}
+.min_img{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 160px;
+  height: 100px;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 1px 1px 10px #000000;
+}
+.country{
+  font-size: 19px;
+  span{
+    font-weight: bold;
+  }
+}
+.description{
+  font-size: 20px;
+}
+.photos_title{
+  margin-bottom: 10px;
+  font-size: 21px;
+  font-weight: bold;
+  border-bottom: 1px solid #000000;
+}
+.photo_block{
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.photos{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.weather_title{
+  font-size: 21px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  border-bottom: 1px solid #000000;
+}
+.weather_block{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.weather{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 176, 155, 0.19);
+  padding: 10px;
+  height: 100px;
+  border-radius: 10px;
+}
+.temp{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ff0015;
+  font-weight: bold;
+  font-size: 25px;
+  margin: 0 20px;
+  span{
+    color: #000000;
+    font-size: 22px;
+  }
+}
+.empty_photo_wrapper{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.empty_photo_title{
+  text-align: center;
+  font-weight: bold;
+  color: #ff0015;
+  border-bottom: 1px solid #000000;
+  width: fit-content;
+  font-size: 21px;
+}
+.photo_preview_container{
+  width: 100%;
+  height: 88%;
+  background: #000000e2;
+  z-index: 99999999999;
+  position: absolute;
+  transition: all 200ms ease;
+  right: 0;
+}
+.close_preview{
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  cursor: pointer;
+  z-index: 999999999999999;
+  color: #ffffff;
+  font-size: 20px;
+}
+.swiper_image{
+  width: 1000px;
+  height: 700px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+}
+.swiper-slide{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slide{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 320px) and (max-width: 375px){
+  .card_bg{
+    display: none;
+  }
+  mat-card{
+    height: 96.5%;
+    overflow: auto;
+  }
+  .min_img{
+    width: 100px;
+    height: 100px;
+  }
+  .post_wrapper{
+    padding: 0;
+  }
+  mat-card-actions{
+    position: relative;
+    width: 100%;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    button{
+      margin-bottom: 10px;
+    }
+  }
+  .weather{
+    flex-direction: column;
+    align-items: center;
+    height: 180px;
+  }
+  .weather_title{
+    text-align: center;
+  }
+  .temp{
+    text-align: center;
+  }
+  .swiper_image{
+    width: 250px;
+    height: 350px;
+  }
+  .close_preview{
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 425px){
+  .card_bg{
+    display: none;
+  }
+  mat-card{
+    height: 96.5%;
+    overflow: auto;
+  }
+  .min_img{
+    width: 120px;
+    height: 100px;
+  }
+  .post_wrapper{
+    padding: 0;
+  }
+  mat-card-actions{
+    position: relative;
+    width: 100%;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    button{
+      margin-bottom: 10px;
+    }
+  }
+  .weather{
+    flex-direction: column;
+    align-items: center;
+    height: 180px;
+  }
+  .weather_title{
+    text-align: center;
+  }
+  .temp{
+    text-align: center;
+  }
+  .swiper_image{
+    width: 270px;
+    height: 350px;
+  }
+  .close_preview{
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 425px) and (max-width: 768px){
+  .card_bg{
+    display: none;
+  }
+    mat-card{
+      height: 96.5%;
+      overflow: auto;
+    }
+    .min_img{
+      width: 150px;
+      height: 100px;
+    }
+    .post_wrapper{
+      padding: 0;
+    }
+    mat-card-actions{
+      position: relative;
+      width: 100%;
+      bottom: 10px;
+      left: 10px;
+      display: flex;
+      align-items: center;
+      button{
+        margin-bottom: 10px;
+      }
+    }
+    .weather{
+      align-items: center;
+      height: 100px;
+    }
+    .weather_title{
+      text-align: center;
+    }
+    .temp{
+      text-align: center;
+    }
+    .swiper_image{
+      width: 330px;
+      height: 380px;
+    }
+  }
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+  mat-card{
+    height: 96.5%;
+    overflow: auto;
+  }
+  .photos{
+    align-items: center;
+  }
+  .post_wrapper{
+    padding: 0;
+  }
+  mat-card-actions{
+    position: relative;
+    width: 50%;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    button{
+      margin-bottom: 10px;
+    }
+  }
+  .weather{
+    align-items: center;
+    height: 100px;
+  }
+  .weather_title{
+    text-align: center;
+  }
+  .temp{
+    text-align: center;
+  }
+  .swiper_image{
+    width: 630px;
+    height: 480px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px){
+  mat-card{
+    height: 96.5%;
+    overflow: auto;
+  }
+  .photos{
+    align-items: center;
+  }
+  .post_wrapper{
+    padding: 0;
+  }
+  mat-card-actions{
+    position: relative;
+    width: 50%;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    button{
+      margin-bottom: 10px;
+    }
+  }
+  .weather{
+    align-items: center;
+    height: 100px;
+  }
+  .weather_title{
+    text-align: center;
+  }
+  .temp{
+    text-align: center;
+  }
+  .swiper_image{
+    width: 830px;
+    height: 580px;
+  }
+  .close_preview{
+    font-size: 16px;
+    top: 10px;
+    right: 10px;
+  }
+}
+

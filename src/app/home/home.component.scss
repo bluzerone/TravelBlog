@@ -1,0 +1,41 @@
+.home_main{
+  position: relative;
+  height: 100%;
+  padding: 0 10px;
+}
+.home_bg{
+  background-image: url("https://www.mgpu.ru/wp-content/uploads/2020/10/travel_00-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  z-index: -1;
+}
+.about_block{
+  display: flex;
+  flex-direction: column;
+}
+.user_greeting{
+  text-align: center;
+}
+.user_greeting-text{
+  font-size: 25px;
+  margin-top: 20px;
+  span{
+    font-weight: bold;
+  }
+}
+.about{
+  font-size: 20px;
+  span{
+    font-weight: bold;
+    color:rgb(41, 57, 186);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

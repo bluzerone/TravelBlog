@@ -1,0 +1,88 @@
+header{
+  height: 6%;
+  background: #00b09b;
+  background: -webkit-linear-gradient(to right, #96c93d, #00b09b);
+  background: linear-gradient(to right, #96c93d, #00b09b);
+  padding: 0 25px;
+  box-shadow: 0 0 15px #283687;
+}
+nav{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo__wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo{
+  font-size: 25px;
+  font-weight: bold;
+  font-style: italic;
+  cursor: pointer;
+}
+button{
+  width: 40px;
+  height: 40px;
+}
+mat-icon{
+  height: 30px;
+  width: 30px;
+  font-size: 30px;
+  margin-right: 10px;
+}
+.unauth_block{
+  display: flex;
+}
+.unauth-link{
+  margin-right: 10px;
+  font-size: 20px;
+  transition: all 500ms ease-in-out;
+  cursor: pointer;
+  &:hover{
+    color: #ff0015;
+    transition: all 200ms ease-in-out;
+  }
+}
+.auth_block{
+  display: flex;
+}
+.auth-link{
+  margin-right: 10px;
+  font-size: 20px;
+  transition: all 500ms ease-in-out;
+  cursor: pointer;
+  &:hover{
+    color: #ff0015;
+    transition: all 200ms ease-in-out;
+  }
+}
+.active{
+  color: #ff0015;
+}
+@media screen and (min-width: 320px) and (max-width: 375px){
+  .logo{
+    font-size: 15px;
+  }
+  .auth-link{
+    margin-right: 5px;
+    font-size: 15px;
+  }
+  .unauth-link{
+    margin-right: 5px;
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 425px){
+  .auth-link{
+    margin-right: 5px;
+    font-size: 15px;
+  }
+  .unauth-link{
+    margin-right: 5px;
+    font-size: 15px;
+  }
+}
+

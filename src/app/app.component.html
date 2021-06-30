@@ -1,3 +1,13 @@
+<div class="main_wrapper">
+  <app-header></app-header>
 
+  <div class="main_container">
+  <app-sidenav class="sidenav"></app-sidenav>
+    <div class="outlet" [@triggerName]="prepareRouteApp(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+  </div>
 
-<router-outlet></router-outlet>
+  <app-footer></app-footer>
+</div>
+

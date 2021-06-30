@@ -1,0 +1,19 @@
+<header>
+  <nav>
+    <div class="logo__wrapper">
+      <div class="logo" routerLink="home">Travel Blog</div>
+    </div>
+    <div
+      class="unauth_block"
+      *ngIf="!($loginSubject | async)"
+    >
+      <div class="unauth-link" routerLink='login' routerLinkActive="active">Login</div>
+      <div class="unauth-link" routerLink='register' routerLinkActive="active">Registration</div>
+    </div>
+    <div class="auth_block" *ngIf="$loginSubject | async">
+      <div class="auth-link" routerLink='user' routerLinkActive="active">Profile</div>
+      <div class="auth-link" (click)="authService.logout()" routerLinkActive="active">Logout</div>
+      <div class="auth-link" [routerLink]="['my-posts/'+ authService.userData?.uid]" routerLinkActive="active">My posts</div>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,60 @@
+<div class="photo_preview_container" *ngIf="showPhotoPreview">
+  <div (click)='hideFoto()' class="close_preview">Close privew</div>
+  <swiper
+    [slidesPerView]="1"
+    [spaceBetween]="150"
+    [navigation]="true"
+    [index]=indexSlideChange
+    style="height:100%;"
+  >
+    <ng-template *ngFor='let photo of post.photo; let i = index' swiperSlide>
+      <div class="slide">
+        <div class="swiper_image" style='background-image: url({{photo}});'></div>
+      </div>
+
+    </ng-template>
+  </swiper>
+</div>
+<div class="post_wrapper" *ngIf="post">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{post.uName}}</mat-card-title>
+      <mat-card-subtitle>{{post.date}}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="card_bg" [ngStyle]="{'background-image': 'url(\'' + post?.coverPhoto +  '\')'}"></div>
+    <mat-card-content>
+      <p class="country">Location: <span>{{post.country}}</span> , {{post.city}}</p>
+      <p class="description">{{post.description}}</p>
+      <div class="photo_block" *ngIf="post.photo.length > 0; else noPhoto">
+        <div class="photos_title">Photo from travel:</div>
+        <div class="photos">
+          <div *ngFor="let photo of post.photo; let i = index">
+            <div class="min_img" (click)="showPhoto(i)" [ngStyle]="{'background-image': 'url(\'' + photo +  '\')'}"></div>
+          </div>
+        </div>
+      </div>
+      <ng-template  #noPhoto>
+        <div class="empty_photo_wrapper">
+          <div class="empty_photo_title">There are no photos from the travel...</div>
+        </div>
+      </ng-template>
+      <div class="weather_block">
+        <div class="weather_title">Weather in {{post.city}} at the moment:</div>
+        <div class="weather" *ngIf="weather">
+          <div class="temp"><span> Minimal temperature: </span> + {{(weather?.main.temp_min -  273.15).toFixed(1)}}</div>
+          <div class="temp"><span> Maximal temperature: </span> + {{(weather?.main.temp_max -  273.15).toFixed(1)}}</div>
+        </div>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary"
+              [routerLink]="['/edit/' + post.id]"
+              *ngIf="post.uid === authService.userData?.uid">EDIT POST</button>
+      <button mat-raised-button color="warn"
+              *ngIf="post.uid === authService.userData?.uid"
+              (click)="baseService.deletePost(card.uid, card.id)">DELETE POST</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+

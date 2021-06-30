@@ -1,14 +1,13 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Observable} from "rxjs";
 import {AuthService} from "../shared/auth.service";
 
-
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit {
 
   $loginSubject: Observable<Boolean>;
 
@@ -17,9 +16,5 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.$loginSubject = this.authService.loginSubject;
   }
-
-  ngOnDestroy() {
-  }
-
 
 }

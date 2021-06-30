@@ -1,1 +1,35 @@
-<p>blog-list works!</p>
+<div class="posts_main_wrapper">
+  <div class="posts_main_bg"></div>
+  <div class="paginate-controls-wrapper">
+    <pagination-controls (pageChange)="page = $event"
+                         autoHide="true"
+                         maxSize="5"></pagination-controls>
+  </div>
+  <mat-card *ngFor="let card of postList">
+    <mat-card-header>
+      <mat-card-title>{{card.uName}}</mat-card-title>
+    </mat-card-header>
+    <div
+      class="card-image"
+      [ngStyle]="{'background-image': 'url(\'' + card.coverPhoto +  '\')'}"
+      *ngFor="let url of card.photo | paginate:
+      { itemsPerPage: 5,
+        currentPage: page,
+        totalItems: totalLength
+        }"></div>
+    <mat-card-content>
+      <div class="card-description">{{card.description | truncate : 441}}</div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary"
+              [routerLink]="['post/' + card.id]">SEE POST</button>
+      <button mat-raised-button color="primary"
+              [routerLink]="['edit/' + card.id]"
+              *ngIf="card.uid === authService.userData.uid">EDIT POST</button>
+      <button mat-raised-button color="warn"
+              *ngIf="card.uid === authService.userData.uid"
+      (click)="baseService.deletePost(card.uid, card.id)">DELETE POST</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>

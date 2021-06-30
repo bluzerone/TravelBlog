@@ -13,14 +13,9 @@ routes = [
     path: 'home', component: HomeComponent,
     data: {animationState: 'One'}
   },
-  {path: 'bloglist' ,
-    loadChildren: () => import('./blog/blog.module').then((m => m.BlogModule)),
-    canActivate: [LoggedInGuard],
-    data: {animationState: 'Two'}
-  },
   {
     path: 'login', component: LoginComponent,
-    data: {animationState: 'Three'}
+    data: {animationState: 'Two'}
   },
   {
     path: 'register', component: RegisterComponent,
@@ -28,8 +23,13 @@ routes = [
   },
   {
     path: 'user', component: UserComponent,
-    data: {animationState: 'Three'},
+    data: {animationState: 'Four'},
     canActivate: [LoggedInGuard]
+  },
+  {path: 'bloglist' ,
+    loadChildren: () => import('./blog/blog.module').then((m => m.BlogModule)),
+    canActivate: [LoggedInGuard],
+    data: {animationState: 'Five'}
   },
 
 
