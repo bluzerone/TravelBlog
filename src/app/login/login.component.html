@@ -2,6 +2,7 @@
   <div class="login-title">Log in to your account or <span routerLink='/register'>register</span></div>
   <ngx-auth-firebaseui-login
     [registrationEnabled] = false
+    [providers]="[providers.Google]"
     (onSuccess)='onSignin($event)'></ngx-auth-firebaseui-login>
 </div>
 

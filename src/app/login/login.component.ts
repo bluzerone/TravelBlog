@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../shared/auth.service";
 import {Router} from "@angular/router";
 import {User} from "../shared/user";
+import {AuthProvider} from "ngx-auth-firebaseui";
 
 @Component({
   selector: 'app-login',
@@ -9,6 +10,8 @@ import {User} from "../shared/user";
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
+  providers = AuthProvider;
 
   constructor(public authService: AuthService,
               public router: Router) { }

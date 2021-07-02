@@ -28,6 +28,7 @@ export class MyPostsComponent implements OnInit, OnDestroy {
           ...e.payload.doc.data() as {}
         } as Post;
       });
+      this.totalLength = this.postList.length;
     });
   }
    ngOnDestroy() {
