@@ -35,7 +35,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
     FooterComponent,
     SidenavComponent,
     NotFoundComponent
-
   ],
   imports: [
     AppRoutingModule,

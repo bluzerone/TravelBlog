@@ -10,6 +10,7 @@ import {Post} from "../../shared/post";
   templateUrl: './blog-list.component.html',
   styleUrls: ['./blog-list.component.scss']
 })
+
 export class BlogListComponent implements OnInit, OnDestroy {
 
   postSubscription: Subscription;
@@ -36,9 +37,9 @@ export class BlogListComponent implements OnInit, OnDestroy {
 
   }
 
+
   ngOnDestroy() {
     this.postSubscription ? this.postSubscription.unsubscribe() : false;
   }
-
 
 }
