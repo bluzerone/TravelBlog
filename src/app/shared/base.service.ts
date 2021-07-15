@@ -4,6 +4,7 @@ import {NotificationService} from "./notification.service";
 import {HttpClient} from "@angular/common/http";
 import {Post} from "./post";
 import {Observable} from "rxjs";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,8 @@ export class BaseService {
 
   constructor(private afs: AngularFirestore,
               private notificationService: NotificationService,
-              private http: HttpClient) { }
+              private http: HttpClient,
+              private router: Router) { }
 
 
   // Function that returns Observable of all publications
@@ -40,6 +42,7 @@ export class BaseService {
   setNewPost(data: Post) {
     this.afs.collection('posts').doc(data.id).set(data);
     this.notificationService.openSnackBar('post successfully added!', "right", "bottom", "success-dialog-red");
+    this.router.navigate(['bloglist'])
   }
 
   // Post editing function that accepts a data object from a component and opens a snack bar with a notification

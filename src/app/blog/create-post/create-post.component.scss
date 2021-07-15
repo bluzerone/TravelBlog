@@ -6,19 +6,6 @@
   overflow: auto;
   position: relative;
 }
-.create_post_bg{
-  background-image: url("https://www.mgpu.ru/wp-content/uploads/2020/10/travel_00-1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.1;
-  z-index: -1;
-}
 .create_post_title{
   font-size: 25px;
   margin-bottom: 20px;
