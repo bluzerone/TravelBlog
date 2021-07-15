@@ -4,6 +4,7 @@ import {BaseService} from "../../shared/base.service";
 import {AuthService} from "../../shared/auth.service";
 import {Router} from "@angular/router";
 import {Post} from "../../shared/post";
+import {urlValidator} from "../../validators/url.validators";
 
 @Component({
   selector: 'app-create-post',
@@ -22,9 +23,9 @@ export class CreatePostComponent implements OnInit {
       city: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
       date: new FormControl('', Validators.required),
-      coverPhoto: new FormControl(''),
+      coverPhoto: new FormControl('', urlValidator),
       photo: new FormArray([
-        new FormControl('', Validators.required)
+        new FormControl('', [Validators.required, urlValidator])
       ])
     })
   }
@@ -39,7 +40,7 @@ export class CreatePostComponent implements OnInit {
 
   // Dynamic add input function
   addPhotoControl(){
-    const control: FormControl = new FormControl('', Validators.required);
+    const control: FormControl = new FormControl('', [Validators.required, urlValidator]);
     (this.createPostForm.get('photo') as FormArray).push(control)
   }
 

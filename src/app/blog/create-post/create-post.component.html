@@ -25,7 +25,8 @@
       <mat-label>Enter the url of cover photo</mat-label>
       <input matInput  formControlName="coverPhoto">
     </mat-form-field>
-
+    <div class="error_msg"
+         *ngIf="createPostForm.get('coverPhoto').invalid && createPostForm.get('coverPhoto').touched ">Please fill in this field, it is required. Or enter URL.</div>
     <div class="photo_array" formArrayName="photo">
       <div class="photo_array_title">Provide links to photos of your travel:</div>
       <div class="photo_input" *ngFor="let control of getControls(); let i = index">
@@ -36,7 +37,7 @@
         <button class="remove_input_btn" mat-raised-button color="warn" (click)="deletePhotoControl(i)">Remove input</button>
       </div>
       <div class="error_msg"
-           *ngIf="createPostForm.get('photo').invalid && createPostForm.get('photo').touched ">Please fill in this fields, it is required. Or remove inputs</div>
+           *ngIf="createPostForm.get('photo').invalid && createPostForm.get('photo').touched ">Please fill in this fields, it is required. Or remove inputs. Or enter URL.</div>
       <button mat-raised-button color="primary" (click)="addPhotoControl()">Add photo input</button>
     </div>
     <mat-form-field  class="description_input" appearance="outline">

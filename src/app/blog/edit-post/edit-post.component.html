@@ -24,7 +24,8 @@
       <mat-label>Enter the url of cover photo</mat-label>
       <input matInput  formControlName="coverPhoto">
     </mat-form-field>
-
+    <div class="error_msg"
+         *ngIf="editPostForm.get('coverPhoto').invalid && editPostForm.get('coverPhoto').touched ">Please fill in this field, it is required. Or enter URL.</div>
     <div class="photo_array" formArrayName="photo">
       <div class="photo_array_title">Provide links to photos of your travel:</div>
       <div class="photo_input" *ngFor="let control of getPhotoControls(); let i = index">

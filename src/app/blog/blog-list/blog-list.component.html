@@ -5,7 +5,11 @@
                          autoHide="true"
                          maxSize="5"></pagination-controls>
   </div>
-  <mat-card *ngFor="let card of postList">
+  <mat-card *ngFor="let card of postList | paginate:
+      { itemsPerPage: 5,
+        currentPage: page,
+        totalItems: totalLength
+        }">
     <mat-card-header>
       <mat-card-title>{{card.uName}}</mat-card-title>
       <mat-card-subtitle>{{card.date}}</mat-card-subtitle>
@@ -13,11 +17,7 @@
     <div
       class="card-image"
       [ngStyle]="{'background-image': 'url(\'' + card.coverPhoto +  '\')'}"
-      *ngFor="let url of card.photo | paginate:
-      { itemsPerPage: 5,
-        currentPage: page,
-        totalItems: totalLength
-        }"></div>
+      *ngFor="let url of card.photo"></div>
     <mat-card-content>
       <div class="card-description">{{card.description | truncate : 441}}</div>
     </mat-card-content>

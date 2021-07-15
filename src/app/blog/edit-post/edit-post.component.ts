@@ -4,6 +4,7 @@ import {BaseService} from "../../shared/base.service";
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Post} from "../../shared/post";
+import {urlValidator} from "../../validators/url.validators";
 
 @Component({
   selector: 'app-edit-post',
@@ -19,7 +20,7 @@ export class EditPostComponent implements OnInit, OnDestroy {
     city: new FormControl('', Validators.required),
     description: new FormControl('', Validators.required),
     date: new FormControl('', Validators.required),
-    coverPhoto: new FormControl(''),
+    coverPhoto: new FormControl('', [Validators.required, urlValidator]),
     photo: new FormArray([
     ])
   })
@@ -48,7 +49,7 @@ export class EditPostComponent implements OnInit, OnDestroy {
 
   // Dynamic add input function
   addPhotoControl(){
-    const control = new FormControl('', Validators.required);
+    const control = new FormControl('', [Validators.required, urlValidator]);
     (this.editPostForm.get('photo') as FormArray).push(control)
   }
 
@@ -60,7 +61,7 @@ export class EditPostComponent implements OnInit, OnDestroy {
   // Function that dynamically displays controls with the received user data
   pushPhotoControls(){
     this.post.photo.forEach(url => {
-      const control = new FormControl(url, Validators.required);
+      const control = new FormControl(url, [Validators.required, urlValidator]);
       (this.editPostForm.get('photo') as FormArray).push(control);
     })
   }
