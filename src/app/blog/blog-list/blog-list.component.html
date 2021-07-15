@@ -16,8 +16,7 @@
     </mat-card-header>
     <div
       class="card-image"
-      [ngStyle]="{'background-image': 'url(\'' + card.coverPhoto +  '\')'}"
-      *ngFor="let url of card.photo"></div>
+      [ngStyle]="{'background-image': 'url(\'' + card.coverPhoto +  '\')'}"></div>
     <mat-card-content>
       <div class="card-description">{{card.description | truncate : 441}}</div>
     </mat-card-content>
